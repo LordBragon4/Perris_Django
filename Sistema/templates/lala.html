@@ -1,0 +1,26 @@
+{% extends 'maqueta.html' %}
+
+
+
+{% block principal %}
+
+    {% if message %}
+      <div class='alert alert-info'>
+        {{ message }}
+      </div>
+    {% endif %}
+
+    <!-- <h3>Upload a picture</h3> 
+        <form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form> -->
+
+    <form class="registro_form" method="POST" id="upload-image-form">
+        <h1>Registro Usuario</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar" class="btn-enviar">
+    </form>
+
+{% endblock %}
